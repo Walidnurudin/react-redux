@@ -1,3 +1,5 @@
+// CONTOH KECIL ALUR REDUX
+
 const redux = require('redux')
 const createStore = redux.createStore;
 
