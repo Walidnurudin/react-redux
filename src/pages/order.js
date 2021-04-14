@@ -8,7 +8,7 @@ class Order extends Component {
             <div>
                 <button onClick={this.props.handlePlus}>+</button>
                 <button onClick={this.props.handleMinus}>-</button>
-                <h1>Hasil : {this.props.order}</h1>
+                <h1>Hasil : {this.props.value}</h1>
             </div>
         )
     }
@@ -16,7 +16,7 @@ class Order extends Component {
 
 const mapStateToProps = state => {
     return {
-        order: state.value
+        value: state.value
     }
 }
 

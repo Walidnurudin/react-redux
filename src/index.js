@@ -3,36 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
-// STATE  
-const initialeState = {
-  value: 0,
-}
-
-// REDUCER
-const rootReducer = (state = initialeState, action) => {
-  switch (action.type) {
-    case 'PLUS_VALUE':
-      return {
-        ...state,
-        value: state.value + 1,
-      }
-    case 'MINUS_VALUE':
-      if (state.value > 0) {
-        return {
-          ...state,
-          value: state.value - 1,
-        }
-      }
-      break;
-    default:
-      return state;
-  }
-}
-
-// STORE
-const store = createStore(rootReducer);
+import { store } from './redux'
 
 ReactDOM.render(
   <React.StrictMode>
