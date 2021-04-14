@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 
 // STATE  
 const initialeState = {
-  value: 0,
+  value: 20,
 }
 
 // REDUCER
