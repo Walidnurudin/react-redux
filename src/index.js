@@ -7,12 +7,28 @@ import { createStore } from 'redux';
 
 // STATE  
 const initialeState = {
-  value: 20,
+  value: 0,
 }
 
 // REDUCER
 const rootReducer = (state = initialeState, action) => {
-  return state;
+  switch (action.type) {
+    case 'PLUS_VALUE':
+      return {
+        ...state,
+        value: state.value + 1,
+      }
+    case 'MINUS_VALUE':
+      if (state.value > 0) {
+        return {
+          ...state,
+          value: state.value - 1,
+        }
+      }
+      break;
+    default:
+      return state;
+  }
 }
 
 // STORE

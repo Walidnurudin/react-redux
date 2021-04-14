@@ -6,7 +6,8 @@ class Order extends Component {
         console.log(this.props)
         return (
             <div>
-                <button>+</button>
+                <button onClick={this.props.handlePlus}>+</button>
+                <button onClick={this.props.handleMinus}>-</button>
                 <h1>Hasil : {this.props.order}</h1>
             </div>
         )
@@ -19,4 +20,11 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Order);
+const mapDispatchToProps = dispatch => {
+    return {
+        handlePlus: () => dispatch({type: 'PLUS_VALUE'}),
+        handleMinus: () => dispatch({type: 'MINUS_VALUE'}),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Order);
